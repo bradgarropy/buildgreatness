@@ -1,0 +1,38 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- facebook open graph -->
+  {% if page.thumb %}
+    <meta property="og:image" content="{{page.thumb}}" />
+  {% else %}
+    <meta property="og:image" content="https://c2.staticflickr.com/2/1710/26577390922_4c810dfd8e_o_d.png" />
+  {% endif %}
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- bootstrap theme cdn -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- style sheet -->
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  <!-- fonts -->
+  <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Maven+Pro:400,700'>
+
+  <!-- site title -->
+  {% if page.title %}
+    <title>{{page.title}}</title>
+  {% else %}
+    <title>{{site.data.variables.title}}</title>
+  {% endif %}
+</head>

@@ -1,0 +1,120 @@
+# Last Updated
+updated: August 3, 2016
+
+# Training
+days:
+  - name: Monday
+    description: Overhead Press
+    exercises:
+      - name: Overhead Press
+        sets:
+        reps:
+      - name: Flat Dumbbell Press
+        sets: 3
+        reps: 6-8
+      - name: V-Bar Lateral Pulldown
+        sets: 3
+        reps: 6-8
+      - name: Tricep Rope Pulldown
+        sets: 3
+        reps: 8-10
+      - name: Dumbbell Curls
+        sets: 3
+        reps: 8-10
+      - name: Cable Lateral Raises
+        sets: 3
+        reps: 8-10
+      - name: Facepulls
+        sets: 2
+        reps: 8-10
+      - name: Kneeling Cable Crunches
+        sets: 3
+        reps: AMRAP
+
+  - name: Tuesday
+    description: Squat
+    exercises:
+      - name: Squats
+        sets:
+        reps:
+      - name: Stiff Legged Deadlifts
+        sets: 3
+        reps: 8-10
+      - name: Lying Leg Curls
+        sets: 3
+        reps: 8-10
+      - name: Standing Calf Raises
+        sets: 3
+        reps: 5
+      - name: Seated Calf Raises
+        sets: 3
+        reps: 6-8
+      - name: Hanging Leg Raises
+        sets: 3
+        reps: AMRAP
+
+  - name: Wednesday
+    description: Lagging Muscle Group
+    exercises:
+      - name: Incline Dumbbell Press
+        sets: 3
+        reps: 4-10
+      - name: Flat Leverage Press
+        sets: 4
+        reps: 6-15
+      - name: Incline HS Press
+        sets: 4
+        reps: 4-10
+      - name: Machine Chest Fly
+        sets: 4
+        reps: 8-15
+
+  - name: Thursday
+    description: Deadlift
+    exercises:
+      - name: Deadlift
+        sets:
+        reps:
+      - name: Hip Thrust
+        sets: 3
+        reps: 6-8
+      - name: Walking Dumbbell Lunges
+        sets: 2
+        reps: 25
+      - name: Standing Calf Raises
+        sets: 5
+        reps: 5
+      - name: Seated Calf Raises
+        sets: 3
+        reps: 6-8
+      - name: Hanging Leg Raises
+        sets: 3
+        reps: AMRAP
+
+  - name: Friday
+    description: Bench Press
+    exercises:
+      - name: Bench Press
+        sets:
+        reps: 
+      - name: Incline Dumbbell Press
+        sets: 3
+        reps: 6-8
+      - name: HS Lateral Pulldown
+        sets: 3
+        reps: 6-8
+      - name: Cable Iso Tricep Pulldown
+        sets: 3
+        reps: 8-10
+      - name: Cable Hammer Curls
+        sets: 3
+        reps: 8-10
+      - name: Dumbbell Lateral Raises
+        sets: 3
+        reps: 8-10
+      - name: Facepulls
+        sets: 2
+        reps: 8-10
+      - name: Kneeling Cable Crunches
+        sets: 3
+        reps: AMRAP

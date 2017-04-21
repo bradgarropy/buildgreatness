@@ -1,0 +1,70 @@
+<div class="articles">
+
+  <div class="container">
+
+    <div class="row vspacer30">
+      <h1 class="article-banner text-center">
+        <a href="/articles">Articles.</a>
+      </h1>
+    </div>
+
+    {% assign articles = "" | split:"|" %}
+    {% assign categories = "" | split:"|" %}
+
+    {% for post in site.posts %}
+      {% if post.layout == "article" %}
+
+        {% if post.categories contains include.category or include.category == null %}
+          {% assign articles = articles | push: post %}
+        {% endif %}
+
+        {% unless categories contains post.category %}
+          {% assign categories = categories | push: post.category %}
+        {% endunless %}
+
+      {% endif %}
+    {% endfor %}
+
+    {% if include.categories %}
+      {% include categories.html layout="articles" categories=categories %}
+    {% endif %}
+
+    <div class="row vspacer30">
+
+      {% for article in articles limit:include.limit %}
+
+        {% assign mod2 = forloop.index | modulo: 2 %}
+        {% assign mod3 = forloop.index | modulo: 3 %}
+        {% assign mod4 = forloop.index | modulo: 4 %}
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 vspacer30">
+          <div class="article-img">
+            <a href="{{article.url}}">
+              <img class="img-responsive center-block" src="{{article.thumb}}">
+            </a>
+          </div>
+
+          <div class="article-info">
+            <p><a href="{{article.url}}">{{article.title}}</a></p>
+            <p><i>{{article.date | date: "%B %-d, %Y"}}</i></p>
+          </div>
+        </div>
+
+        {% if mod2 == 0 %}
+          <div class="clearfix visible-sm-block"></div>
+        {% endif %}
+
+        {% if mod3 == 0 %}
+          <div class="clearfix visible-md-block"></div>
+        {% endif %}
+
+        {% if mod4 == 0 %}
+          <div class="clearfix visible-lg-block"></div>
+        {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</div>

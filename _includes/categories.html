@@ -1,0 +1,23 @@
+<div class="categories">
+
+  <div class="row vspacer30">
+    <div class="col-xs-12">
+
+      <ul class="nav nav-justified text-center category-bar">
+
+        <li>
+            <a href="/{{include.layout}}">all</a>
+        </li>
+
+        {% for category in include.categories %}
+          <li>
+              <a href="/{{include.layout}}/categories/{{category}}">{{category}}</a>
+          </li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
+  </div>
+
+</div>

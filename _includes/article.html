@@ -1,0 +1,52 @@
+<div class="article">
+
+  <div class="container">
+
+    <div class="row topspacer25">
+      <div class="col-md-10 col-md-offset-1">
+        <a href="{{page.flickr}}">
+          <img class="img-responsive center-block" src="{{page.image}}">
+        </a>
+      </div>
+    </div>
+
+    <div class="row vspacer30">
+      <div class="col-md-8 col-md-offset-2">
+        {% include meta.html %}
+      </div>
+    </div>
+
+    <div class="row topspacer40">
+      <div class="col-md-8 col-md-offset-2">
+
+        <div class="content">
+          {{page.content | markdownify}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row bottomspacer30">
+      <div class="col-md-8 col-md-offset-2">
+
+        <h4>
+          <small>
+            <em>
+
+              <div class="category">
+                <i class="fa fa-book fa-lg"></i>
+
+                {% for category in page.categories %}
+                  <a href="/articles/categories/{{category}}">{{category}}</a>
+                {% endfor %}
+              </div>
+
+            </em>
+          </small>
+        </h4>
+
+      </div>
+    </div>
+
+  </div>
+</div>

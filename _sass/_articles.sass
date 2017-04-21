@@ -1,0 +1,36 @@
+// Variables
+
+
+// Styles
+.article-banner
+  font-size: $text-size-title
+
+.article-info
+  //description background
+  background-color: $color-article-bg
+
+  //description border
+  border-width: 0px thin thin thin
+  border-style: solid
+  border-color: $color-border
+  box-shadow: 0px 0px 5px $color-border
+
+  //title typography
+  p:nth-of-type(1)
+    font-size: $text-size-box-title
+    margin-left: 5px
+    margin-bottom: 0px
+
+  //date typography
+  p:nth-of-type(2)
+    font-size: $text-size-box-date
+    margin-left: 5px
+    margin-bottom: 0px
+
+.article-img
+  overflow: hidden
+
+  a:hover
+    img
+      transform: perspective(1px) scale(1.5)
+      transition: all 1s

@@ -1,0 +1,11 @@
+# Conversion
+markdown: kramdown
+sass:
+  style: compressed
+
+# Outputting
+permalink: pretty
+
+# Collections
+collections:
+- pictures
