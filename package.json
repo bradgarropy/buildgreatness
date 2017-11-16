@@ -1,19 +1,27 @@
 {
-  "name": "buildgreatness",
-  "version": "0.0.1",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bradgarropy/buildgreatness.git"
-  },
-  "author": "Brad Garropy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bradgarropy/buildgreatness/issues"
-  },
-  "homepage": "https://github.com/bradgarropy/buildgreatness#readme"
+    "name": "buildgreatness",
+    "version": "0.0.1",
+    "description": "It's time to Build Greatness.",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bradgarropy/buildgreatness.git"
+    },
+    "author": "Brad Garropy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bradgarropy/buildgreatness/issues"
+    },
+    "homepage": "https://github.com/bradgarropy/buildgreatness#readme",
+    "dependencies": {
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "dotenv": "^4.0.0",
+        "eslint": "^4.11.0",
+        "htmlhint": "^0.9.13"
+    }
 }
