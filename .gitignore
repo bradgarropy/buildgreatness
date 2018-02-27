@@ -1,5 +1,5 @@
+# editor
+.vscode
+
 # dependencies
 node_modules
-
-# secrets
-.env
