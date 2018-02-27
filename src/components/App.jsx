@@ -1,19 +1,27 @@
 import React from "react"
 
+// material ui
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+
+// components
+import Logo from "./Logo"
+import RegisterForm from "./forms/RegisterForm"
+
 // styles
 import "../css/App.css"
 
 
 const App = () => (
 
-    <div className="App">
-        <header className="App-header">
-            <h1 className="App-title">Build Greatness</h1>
-        </header>
-        <p className="App-intro">
-            Future home of Build Greatness.
-        </p>
-    </div>
+    <MuiThemeProvider>
+
+        <div className="app">
+            <Logo width="300px"/>
+            <p>Register to get notified of new features!</p>
+            <RegisterForm/>
+        </div>
+
+    </MuiThemeProvider>
 
 )
 
