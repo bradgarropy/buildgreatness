@@ -12,7 +12,7 @@ const TextInput = (props) => (
         name={props.name}
         value={props.value}
         error={props.error}
-        onChange={props.onChange}
+        onChange={(event, newValue) => props.onChange(props.name, newValue)}
     />
 
 )

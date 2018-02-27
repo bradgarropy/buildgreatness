@@ -1,5 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
+
+// api
+import {registerUser} from "../../api/users"
 
 // components
 import TextInput from "../inputs/TextInput"
@@ -10,56 +12,102 @@ import RaisedButton from "material-ui/RaisedButton"
 import "../../css/RegisterForm.css"
 
 
-const RegisterForm = (props) => (
+class RegisterForm extends React.Component {
 
-    <div className="register-form">
+    constructor(props) {
 
-        <form className="form" onSubmit={props.onSubmit}>
+        super(props)
 
-            <TextInput
-                label="First Name"
-                name="first_name"
-            />
+        this.state = {
+            first_name: "",
+            last_name: "",
+            email: "",
+            password: "",
+            confirmation: "",
+            errors: {},
+        }
 
-            <TextInput
-                label="Last Name"
-                name="last_name"
-            />
+        this.onChange = this.onChange.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
 
-            <TextInput
-                label="Email"
-                name="email"
-            />
+    }
 
-            <PasswordInput
-                label="Password"
-                name="password"
-            />
+    onChange(name, value) {
 
-            <PasswordInput
-                label="Confirm Password"
-                name="confirmation"
-            />
+        this.setState({[name]: value})
 
-            <RaisedButton
-                className="button"
-                primary
-                label="submit"
-            />
+    }
 
-        </form>
+    onSubmit() {
 
-    </div>
+        const {errors, ...data} = this.state
 
-)
+        registerUser(data)
 
+    }
 
-RegisterForm.propTypes = {
-    onSubmit: PropTypes.func,
-}
+    render() {
 
+        return (
 
-RegisterForm.defaultProps = {
+            <div className="register-form">
+
+                <form className="form" onSubmit={this.onSubmit}>
+
+                    <TextInput
+                        label="First Name"
+                        name="first_name"
+                        value={this.state.first_name}
+                        error={this.state.errors.first_name}
+                        onChange={this.onChange}
+                    />
+
+                    <TextInput
+                        label="Last Name"
+                        name="last_name"
+                        value={this.state.last_name}
+                        error={this.state.errors.last_name}
+                        onChange={this.onChange}
+                    />
+
+                    <TextInput
+                        label="Email"
+                        name="email"
+                        value={this.state.email}
+                        error={this.state.errors.email}
+                        onChange={this.onChange}
+                    />
+
+                    <PasswordInput
+                        label="Password"
+                        name="password"
+                        value={this.state.password}
+                        error={this.state.errors.password}
+                        onChange={this.onChange}
+                    />
+
+                    <PasswordInput
+                        label="Confirm Password"
+                        name="confirmation"
+                        value={this.state.confirmation}
+                        error={this.state.errors.confirmation}
+                        onChange={this.onChange}
+                    />
+
+                    <RaisedButton
+                        className="button"
+                        primary
+                        label="submit"
+                        onClick={this.onSubmit}
+                    />
+
+                </form>
+
+            </div>
+
+        )
+
+    }
 
 }
 
