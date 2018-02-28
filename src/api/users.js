@@ -1,11 +1,8 @@
 import axios from "axios"
 
 
-const API_URL = "http://localhost:3001"
-
-
 export function registerUser(data) {
 
-    return axios.post(`${API_URL}/users`, data)
+    return axios.post(`${process.env.REACT_APP_API_URL}/users`, data)
 
 }
