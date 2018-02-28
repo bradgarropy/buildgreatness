@@ -9,7 +9,7 @@ cache:
         - node_modules
 
 env:
-    - REACT_APP_API_URL=http://buildgreatness-dev.herokuapp.com
+    - REACT_APP_API_URL=http://buildgreatness-api-dev.herokuapp.com
 
 script:
     - npm run lint
