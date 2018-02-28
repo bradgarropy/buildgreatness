@@ -12,7 +12,7 @@ const PasswordInput = (props) => (
         floatingLabelText={props.label}
         name={props.name}
         value={props.value}
-        error={props.error}
+        errorText={props.error}
         onChange={(event, newValue) => props.onChange(props.name, newValue)}
     />
 
