@@ -4,5 +4,8 @@
 # dependencies
 node_modules
 
+# build
+build
+
 # secrets
-.env
+.env.*.local
