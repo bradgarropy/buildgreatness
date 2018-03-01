@@ -1,8 +1,20 @@
-import axios from "axios"
+// import axios from "axios"
 
 
-export function registerUser(data) {
+export function registerUser() {
 
-    return axios.post(`${process.env.REACT_APP_API_URL}/users`, data)
+    // eslint-disable-next-line
+    console.log(process.env)
+
+    // eslint-disable-next-line
+    console.log(process.env.REACT_APP_API_URL)
+
+    // eslint-disable-next-line
+    console.log(`${process.env.REACT_APP_API_URL}`)
+
+    // eslint-disable-next-line
+    console.log(`${process.env.REACT_APP_API_URL}/users`)
+
+    // return axios.post(`${process.env.REACT_APP_API_URL}/users`, data)
 
 }
