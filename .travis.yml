@@ -8,12 +8,6 @@ cache:
     directories:
         - node_modules
 
-<<<<<<< HEAD
-env:
-    - REACT_APP_API_URL=http://buildgreatness-api.herokuapp.com
-
-=======
->>>>>>> dev
 script:
     - npm run lint
     - npm run build
