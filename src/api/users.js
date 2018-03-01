@@ -1,7 +1,7 @@
 // import axios from "axios"
 
 
-export function registerUser(data) {
+export function registerUser() {
 
     // eslint-disable-next-line
     console.log(process.env)
