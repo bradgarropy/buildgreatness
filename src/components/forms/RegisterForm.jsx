@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 
 // api
 import {registerUser} from "../../api/users"
@@ -45,8 +46,8 @@ class RegisterForm extends React.Component {
         const {errors, ...data} = this.state
 
         registerUser(data)
-            .then(response => {
-                console.log(response.data)
+            .then(() => {
+                this.props.onSubmit()
             })
             .catch(error => {
 
@@ -126,6 +127,11 @@ class RegisterForm extends React.Component {
 
     }
 
+}
+
+
+RegisterForm.propTypes = {
+    onSubmit: PropTypes.func,
 }
 
 

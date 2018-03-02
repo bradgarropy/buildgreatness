@@ -11,26 +11,51 @@ import RegisterForm from "./forms/RegisterForm"
 import "../css/App.css"
 
 
-const App = () => (
+class App extends React.Component {
 
-    <MuiThemeProvider>
+    constructor(props) {
 
-        <div className="app">
+        super(props)
 
-            <div className="logo">
-                <Logo width="300px"/>
-                <p>Register to get notified of new features!</p>
-            </div>
+        this.state = {submitted: false}
 
-            <div className="form">
-                <RegisterForm/>
-            </div>
+        this.onSubmit = this.onSubmit.bind(this)
 
-        </div>
+    }
 
-    </MuiThemeProvider>
+    onSubmit() {
+        this.setState({submitted: true})
+    }
 
-)
+    render() {
+
+        const message = this.state.submitted
+            ? "Thank you!"
+            : "Register to get notified of new features!"
+
+        return (
+
+            <MuiThemeProvider>
+
+                <div className="app">
+
+                    <div className="logo">
+                        <Logo width="300px"/>
+                        <p>{message}</p>
+                    </div>
+
+                    <div className="form">
+                        {!this.state.submitted && <RegisterForm onSubmit={this.onSubmit}/>}
+                    </div>
+
+                </div>
+
+            </MuiThemeProvider>
+
+        )
+    }
+
+}
 
 
 // export
