@@ -38,7 +38,9 @@ class RegisterForm extends React.Component {
 
     }
 
-    onSubmit() {
+    onSubmit(event) {
+
+        event.preventDefault()
 
         const {errors, ...data} = this.state
 
