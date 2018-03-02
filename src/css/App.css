@@ -1,5 +1,16 @@
 .app {
+    height: 100%;
     display: grid;
-    justify-items: center;
-    font-family: 'Roboto', sans-serif;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.app .logo {
+    margin: 0px 20px;
+}
+
+.app .form {
+    margin: 0px 20px;
 }
