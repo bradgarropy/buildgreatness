@@ -16,9 +16,16 @@ const App = () => (
     <MuiThemeProvider>
 
         <div className="app">
-            <Logo width="300px"/>
-            <p>Register to get notified of new features!</p>
-            <RegisterForm/>
+
+            <div className="logo">
+                <Logo width="300px"/>
+                <p>Register to get notified of new features!</p>
+            </div>
+
+            <div className="form">
+                <RegisterForm/>
+            </div>
+
         </div>
 
     </MuiThemeProvider>
