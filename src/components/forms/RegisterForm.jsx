@@ -109,6 +109,7 @@ class RegisterForm extends React.Component {
                     />
 
                     <RaisedButton
+                        type="submit"
                         className="button"
                         primary
                         label="submit"
