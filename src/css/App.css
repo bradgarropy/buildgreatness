@@ -1,17 +1,4 @@
 .app {
     height: 100%;
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    align-content: center;
     font-family: "Roboto", sans-serif;
-}
-
-.app .logo {
-    margin: 0px 20px;
-    text-align: center;
-}
-
-.app .form {
-    margin: 0px 20px;
 }

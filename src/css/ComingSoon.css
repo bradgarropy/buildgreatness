@@ -1,0 +1,26 @@
+.coming-soon {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+}
+
+@media (max-width: 750px) {
+
+    .coming-soon {
+        height: auto;
+        grid-template-columns: auto;
+        margin: 40px 0px;
+    }
+
+}
+
+.coming-soon .logo {
+    margin: 0px 20px;
+    text-align: center;
+}
+
+.coming-soon .form {
+    margin: 0px 20px;
+}
