@@ -4,8 +4,7 @@ import React from "react"
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
 
 // components
-import Logo from "./Logo"
-import RegisterForm from "./forms/RegisterForm"
+import ComingSoon from "./ComingSoon"
 
 // styles
 import "../css/App.css"
@@ -17,21 +16,11 @@ class App extends React.Component {
 
         super(props)
 
-        this.state = {submitted: false}
+        this.state = {}
 
-        this.onSubmit = this.onSubmit.bind(this)
-
-    }
-
-    onSubmit() {
-        this.setState({submitted: true})
     }
 
     render() {
-
-        const message = this.state.submitted
-            ? "Thank you!"
-            : "Register to get notified of new features!"
 
         return (
 
@@ -39,14 +28,7 @@ class App extends React.Component {
 
                 <div className="app">
 
-                    <div className="logo">
-                        <Logo width="300px"/>
-                        <p>{message}</p>
-                    </div>
-
-                    <div className="form">
-                        {!this.state.submitted && <RegisterForm onSubmit={this.onSubmit}/>}
-                    </div>
+                    <ComingSoon/>
 
                 </div>
 

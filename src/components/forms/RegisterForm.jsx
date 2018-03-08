@@ -46,20 +46,8 @@ class RegisterForm extends React.Component {
         const {errors, ...data} = this.state
 
         registerUser(data)
-            .then(() => {
-                this.props.onSubmit()
-            })
-            .catch(error => {
-
-                const errors = error.response.data.errors
-
-                Object.keys(errors).forEach((key) => {
-                    errors[key] = errors[key].message
-                })
-
-                this.setState({errors})
-
-            })
+            .then(() => this.props.onSubmit())
+            .catch(error => this.setState({errors: error.response.data}))
 
     }
 
