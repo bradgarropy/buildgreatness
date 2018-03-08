@@ -7,6 +7,9 @@ import RegisterForm from "./forms/RegisterForm"
 // styles
 import "../css/ComingSoon.css"
 
+// api
+import {registerUser} from "../api/users"
+
 
 class ComingSoon extends React.Component {
 
@@ -14,15 +17,48 @@ class ComingSoon extends React.Component {
 
         super(props)
 
-        this.state = {submitted: false}
+        this.state = {
+            errors: {},
+            user: {
+                first_name: "",
+                last_name: "",
+                email: "",
+                password: "",
+                confirmation: "",
+            },
+            submitted: false,
+        }
 
+        this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
 
     }
 
-    onSubmit() {
+    onChange(name, value) {
 
-        this.setState({submitted: true})
+        let user = this.state.user
+        user[name] = value
+
+        this.setState({user})
+
+    }
+
+    onSubmit(event) {
+
+        event.preventDefault()
+
+        registerUser(this.state.user)
+            .then(() => {
+
+                this.setState({submitted: true})
+
+            })
+            .catch(error => {
+
+                const errors = error.response.data
+                this.setState({errors})
+
+            })
 
     }
 
@@ -42,7 +78,14 @@ class ComingSoon extends React.Component {
                 </div>
 
                 <div className="form">
-                    {!this.state.submitted && <RegisterForm onSubmit={this.onSubmit}/>}
+                    {!this.state.submitted &&
+                        <RegisterForm
+                            user={this.state.user}
+                            errors={this.state.errors}
+                            onChange={this.onChange}
+                            onSubmit={this.onSubmit}
+                        />
+                    }
                 </div>
 
             </div>
