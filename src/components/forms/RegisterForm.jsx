@@ -1,9 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-// api
-import {registerUser} from "../../api/users"
-
 // components
 import TextInput from "../inputs/TextInput"
 import PasswordInput from "../inputs/PasswordInput"
@@ -13,112 +10,71 @@ import RaisedButton from "material-ui/RaisedButton"
 import "../../css/RegisterForm.css"
 
 
-class RegisterForm extends React.Component {
+const RegisterForm = (props) => (
 
-    constructor(props) {
+    <div className="register-form">
 
-        super(props)
+        <form className="form" onSubmit={this.onSubmit}>
 
-        this.state = {
-            first_name: "",
-            last_name: "",
-            email: "",
-            password: "",
-            confirmation: "",
-            errors: {},
-        }
+            <TextInput
+                label="First Name"
+                name="first_name"
+                value={props.user.first_name}
+                error={props.errors.first_name}
+                onChange={props.onChange}
+            />
 
-        this.onChange = this.onChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
+            <TextInput
+                label="Last Name"
+                name="last_name"
+                value={props.user.last_name}
+                error={props.errors.last_name}
+                onChange={props.onChange}
+            />
 
-    }
+            <TextInput
+                label="Email"
+                name="email"
+                value={props.user.email}
+                error={props.errors.email}
+                onChange={props.onChange}
+            />
 
-    onChange(name, value) {
+            <PasswordInput
+                label="Password"
+                name="password"
+                value={props.user.password}
+                error={props.errors.password}
+                onChange={props.onChange}
+            />
 
-        this.setState({[name]: value})
+            <PasswordInput
+                label="Confirm Password"
+                name="confirmation"
+                value={props.user.confirmation}
+                error={props.errors.confirmation}
+                onChange={props.onChange}
+            />
 
-    }
+            <RaisedButton
+                type="submit"
+                className="button"
+                primary
+                label="register"
+                onClick={props.onSubmit}
+            />
 
-    onSubmit(event) {
+        </form>
 
-        event.preventDefault()
+    </div>
 
-        const {errors, ...data} = this.state
-
-        registerUser(data)
-            .then(() => this.props.onSubmit())
-            .catch(error => this.setState({errors: error.response.data}))
-
-    }
-
-    render() {
-
-        return (
-
-            <div className="register-form">
-
-                <form className="form" onSubmit={this.onSubmit}>
-
-                    <TextInput
-                        label="First Name"
-                        name="first_name"
-                        value={this.state.first_name}
-                        error={this.state.errors.first_name}
-                        onChange={this.onChange}
-                    />
-
-                    <TextInput
-                        label="Last Name"
-                        name="last_name"
-                        value={this.state.last_name}
-                        error={this.state.errors.last_name}
-                        onChange={this.onChange}
-                    />
-
-                    <TextInput
-                        label="Email"
-                        name="email"
-                        value={this.state.email}
-                        error={this.state.errors.email}
-                        onChange={this.onChange}
-                    />
-
-                    <PasswordInput
-                        label="Password"
-                        name="password"
-                        value={this.state.password}
-                        error={this.state.errors.password}
-                        onChange={this.onChange}
-                    />
-
-                    <PasswordInput
-                        label="Confirm Password"
-                        name="confirmation"
-                        value={this.state.confirmation}
-                        error={this.state.errors.confirmation}
-                        onChange={this.onChange}
-                    />
-
-                    <RaisedButton
-                        type="submit"
-                        className="button"
-                        primary
-                        label="submit"
-                        onClick={this.onSubmit}
-                    />
-
-                </form>
-
-            </div>
-
-        )
-
-    }
-
-}
+)
 
 
 RegisterForm.propTypes = {
+    user: PropTypes.object,
+    errors: PropTypes.object,
+    onChange: PropTypes.func,
     onSubmit: PropTypes.func,
 }
 
