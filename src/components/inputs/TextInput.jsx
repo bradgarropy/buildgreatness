@@ -11,6 +11,7 @@ const TextInput = (props) => (
         floatingLabelText={props.label}
         name={props.name}
         value={props.value}
+        autoComplete={props.autocomplete}
         errorText={props.error}
         onChange={(event, newValue) => props.onChange(props.name, newValue)}
     />
@@ -22,6 +23,7 @@ TextInput.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
     value: PropTypes.string,
+    autocomplete: PropTypes.string,
     error: PropTypes.string,
     onChange: PropTypes.func,
 }

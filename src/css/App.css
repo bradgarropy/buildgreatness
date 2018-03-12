@@ -1,4 +1,9 @@
 .app {
     height: 100%;
-    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "navigation content user"
+        "navigation content user";
 }

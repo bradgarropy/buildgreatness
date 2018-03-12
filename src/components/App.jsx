@@ -1,10 +1,13 @@
 import React from "react"
+import {BrowserRouter as Router} from "react-router-dom"
 
 // material ui
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
 
 // components
-import ComingSoon from "./ComingSoon"
+import Navigation from "./Navigation"
+import User from "./User"
+import Content from "./Content"
 
 // styles
 import "../css/App.css"
@@ -26,11 +29,17 @@ class App extends React.Component {
 
             <MuiThemeProvider>
 
-                <div className="app">
+                <Router>
 
-                    <ComingSoon/>
+                    <div className="app">
 
-                </div>
+                        <Navigation/>
+                        <User/>
+                        <Content/>
+
+                    </div>
+
+                </Router>
 
             </MuiThemeProvider>
 

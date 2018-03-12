@@ -1,7 +1,7 @@
-.register-form .form {
+.register-form-form {
     display: grid;
 }
 
-.register-form .button {
+.register-form-button {
     margin: 20px 0px;
 }

@@ -1,0 +1,5 @@
+.content {
+    display: grid;
+    grid-area: content;
+    padding: 75px 20px;
+}

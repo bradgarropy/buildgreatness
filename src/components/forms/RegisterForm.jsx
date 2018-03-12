@@ -14,12 +14,13 @@ const RegisterForm = (props) => (
 
     <div className="register-form">
 
-        <form className="form" onSubmit={this.onSubmit}>
+        <form className="register-form-form" onSubmit={this.onSubmit}>
 
             <TextInput
                 label="First Name"
                 name="first_name"
                 value={props.user.first_name}
+                autocomplete="given-name"
                 error={props.errors.first_name}
                 onChange={props.onChange}
             />
@@ -28,6 +29,7 @@ const RegisterForm = (props) => (
                 label="Last Name"
                 name="last_name"
                 value={props.user.last_name}
+                autocomplete="family-name"
                 error={props.errors.last_name}
                 onChange={props.onChange}
             />
@@ -36,6 +38,7 @@ const RegisterForm = (props) => (
                 label="Email"
                 name="email"
                 value={props.user.email}
+                autocomplete="email"
                 error={props.errors.email}
                 onChange={props.onChange}
             />
@@ -44,6 +47,7 @@ const RegisterForm = (props) => (
                 label="Password"
                 name="password"
                 value={props.user.password}
+                autocomplete="new-password"
                 error={props.errors.password}
                 onChange={props.onChange}
             />
@@ -52,13 +56,14 @@ const RegisterForm = (props) => (
                 label="Confirm Password"
                 name="confirmation"
                 value={props.user.confirmation}
+                autocomplete="new-password"
                 error={props.errors.confirmation}
                 onChange={props.onChange}
             />
 
             <RaisedButton
                 type="submit"
-                className="button"
+                className="register-form-button"
                 primary
                 label="register"
                 onClick={props.onSubmit}

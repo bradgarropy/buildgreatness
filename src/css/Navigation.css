@@ -1,0 +1,8 @@
+.navigation {
+    grid-area: navigation;
+    display: grid;
+    align-content: start;
+    justify-items: left;
+    padding: 20px;
+    background-color: lightblue;
+}
