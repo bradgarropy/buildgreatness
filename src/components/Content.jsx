@@ -6,10 +6,12 @@ import {Switch} from "react-router-dom"
 import "../css/Content.css"
 
 // components
-import Landing from "./routes/Landing"
-import Register from "./routes/Register"
-import Login from "./routes/Login"
-import Protected from "./routes/Protected"
+import Register from "./views/Register"
+import Login from "./views/Login"
+import Landing from "./views/Landing"
+import Training from "./views/Training"
+import Nutrition from "./views/Nutrition"
+import Measurements from "./views/Measurements"
 import ProtectedRoute from "./ProtectedRoute"
 
 
@@ -21,7 +23,9 @@ const Content = () => (
             <Route exact path="/" component={Landing}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
-            <ProtectedRoute exact path="/protected" component={Protected}/>
+            <ProtectedRoute exact path="/training" component={Training}/>
+            <ProtectedRoute exact path="/nutrition" component={Nutrition}/>
+            <ProtectedRoute exact path="/measurements" component={Measurements}/>
         </Switch>
 
     </div>

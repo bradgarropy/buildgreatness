@@ -6,16 +6,17 @@ import "../css/Navigation.css"
 
 // material ui
 import FlatButton from "material-ui/FlatButton"
-import FilterOne from "material-ui/svg-icons/image/filter-1"
-import FilterTwo from "material-ui/svg-icons/image/filter-2"
-import FilterThree from "material-ui/svg-icons/image/filter-3"
-import FilterFour from "material-ui/svg-icons/image/filter-4"
+import PersonAddIcon from "material-ui/svg-icons/social/person-add"
+import HomeIcon from "material-ui/svg-icons/action/home"
+import FitnessCenterIcon from "material-ui/svg-icons/places/fitness-center"
+import EqualizerIcon from "material-ui/svg-icons/av/equalizer"
+import MapsRestaurant from "material-ui/svg-icons/maps/restaurant"
 
 // components
 import Logo from "./Logo"
 
 
-const Navigation = (props) => {
+const Navigation = () => {
 
     return (
 
@@ -28,7 +29,7 @@ const Navigation = (props) => {
                 hoverColor="none"
                 disableTouchRipple
                 containerElement={<Link to="/"/>}
-                icon={<FilterOne/>}
+                icon={<HomeIcon/>}
             />
 
             <FlatButton
@@ -36,23 +37,31 @@ const Navigation = (props) => {
                 hoverColor="none"
                 disableTouchRipple
                 containerElement={<Link to="/register"/>}
-                icon={<FilterTwo/>}
+                icon={<PersonAddIcon/>}
             />
 
             <FlatButton
-                label="login"
+                label="training"
                 hoverColor="none"
                 disableTouchRipple
-                containerElement={<Link to="/login"/>}
-                icon={<FilterThree/>}
+                containerElement={<Link to="/training"/>}
+                icon={<FitnessCenterIcon/>}
             />
 
             <FlatButton
-                label="protected"
+                label="measurements"
                 hoverColor="none"
                 disableTouchRipple
-                containerElement={<Link to="/protected"/>}
-                icon={<FilterFour/>}
+                containerElement={<Link to="/measurements"/>}
+                icon={<EqualizerIcon/>}
+            />
+
+            <FlatButton
+                label="nutrition"
+                hoverColor="none"
+                disableTouchRipple
+                containerElement={<Link to="/nutrition"/>}
+                icon={<MapsRestaurant/>}
             />
 
         </div>
