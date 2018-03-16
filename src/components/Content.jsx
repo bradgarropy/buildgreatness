@@ -12,6 +12,7 @@ import Landing from "./views/Landing"
 import Training from "./views/Training"
 import Nutrition from "./views/Nutrition"
 import Measurements from "./views/Measurements"
+import MeasurementsAdd from "./views/MeasurementsAdd"
 import ProtectedRoute from "./ProtectedRoute"
 
 
@@ -26,6 +27,7 @@ const Content = () => (
             <ProtectedRoute exact path="/training" component={Training}/>
             <ProtectedRoute exact path="/nutrition" component={Nutrition}/>
             <ProtectedRoute exact path="/measurements" component={Measurements}/>
+            <ProtectedRoute exact path="/measurements/add" component={MeasurementsAdd}/>
         </Switch>
 
     </div>
