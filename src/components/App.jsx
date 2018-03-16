@@ -2,7 +2,7 @@ import React from "react"
 import {BrowserRouter as Router} from "react-router-dom"
 
 // material ui
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider"
+import MaterialUI from "material-ui/styles/MuiThemeProvider"
 
 // components
 import Navigation from "./Navigation"
@@ -12,39 +12,33 @@ import Content from "./Content"
 // styles
 import "../css/App.css"
 
+// utils
+import authorization from "../utils/authorization"
 
-class App extends React.Component {
 
-    constructor(props) {
+const App = () => {
 
-        super(props)
+    authorization.headers()
 
-        this.state = {}
+    return (
 
-    }
+        <MaterialUI>
 
-    render() {
+            <Router>
 
-        return (
+                <div className="app">
 
-            <MuiThemeProvider>
+                    <Navigation/>
+                    <User/>
+                    <Content/>
 
-                <Router>
+                </div>
 
-                    <div className="app">
+            </Router>
 
-                        <Navigation/>
-                        <User/>
-                        <Content/>
+        </MaterialUI>
 
-                    </div>
-
-                </Router>
-
-            </MuiThemeProvider>
-
-        )
-    }
+    )
 
 }
 
