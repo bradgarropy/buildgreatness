@@ -1,0 +1,23 @@
+.measurements-form-form {
+    display: grid;
+    grid-row-gap: 50px;
+    justify-content: center;
+    justify-items: center;
+    grid-template-rows: auto auto auto;
+}
+
+.measurements-form-inputs {
+    display: grid;
+    align-items: start;
+    grid-column-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.measurements-form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.measurements-form-button {
+    justify-self: stretch;
+}
