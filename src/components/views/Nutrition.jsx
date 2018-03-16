@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 
 class Nutrition extends React.Component {
@@ -25,16 +24,6 @@ class Nutrition extends React.Component {
         )
 
     }
-
-}
-
-
-Nutrition.propTypes = {
-
-}
-
-
-Nutrition.defaultProps = {
 
 }
 

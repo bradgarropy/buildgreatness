@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 
 class Training extends React.Component {
@@ -25,16 +24,6 @@ class Training extends React.Component {
         )
 
     }
-
-}
-
-
-Training.propTypes = {
-
-}
-
-
-Training.defaultProps = {
 
 }
 
