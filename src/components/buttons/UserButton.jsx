@@ -9,6 +9,9 @@ import Popover from "material-ui/Popover"
 import Menu from "material-ui/Menu"
 import MenuItem from "material-ui/MenuItem"
 
+// utils
+import authorization from "../../utils/authorization"
+
 
 class User extends React.Component {
 
@@ -47,6 +50,8 @@ class User extends React.Component {
 
         localStorage.removeItem("user")
         localStorage.removeItem("token")
+
+        authorization.headers()
 
         this.setState({redirect: true})
 

@@ -1,7 +1,15 @@
+// utils
+import localstorage from "./localstorage"
+
+
 function isAuthenticated() {
 
-    if(localStorage.getItem("token") === null) {
+    const user = localstorage.user()
+
+    if(!user) {
+
         return false
+
     }
 
     return true
@@ -10,4 +18,6 @@ function isAuthenticated() {
 
 
 // exports
-export default {isAuthenticated}
+export default {
+    isAuthenticated,
+}

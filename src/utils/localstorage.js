@@ -9,7 +9,9 @@ function user() {
 
 function token() {
 
-    const token = localStorage.getItem("token")
+    let token = localStorage.getItem("token")
+    token = JSON.parse(token)
+
     return token
 
 }

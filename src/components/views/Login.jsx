@@ -9,6 +9,9 @@ import LoginForm from "../forms/LoginForm"
 // api
 import users from "../../api/users"
 
+// utils
+import authorization from "../../utils/authorization"
+
 
 class Login extends React.Component {
 
@@ -47,10 +50,11 @@ class Login extends React.Component {
 
                 const token = response.data.token
                 let user = jwtdecode(token)
-                user = JSON.stringify(user)
 
-                localStorage.setItem("user", user)
-                localStorage.setItem("token", token)
+                localStorage.setItem("user", JSON.stringify(user))
+                localStorage.setItem("token", JSON.stringify(token))
+
+                authorization.headers()
 
                 this.setState({redirect: true})
 
