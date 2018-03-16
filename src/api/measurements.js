@@ -8,7 +8,15 @@ export function add(data) {
 }
 
 
+export function read() {
+
+    return axios.get(`${process.env.REACT_APP_API_URL}/measurements`)
+
+}
+
+
 // exports
 export default {
     add,
+    read,
 }
