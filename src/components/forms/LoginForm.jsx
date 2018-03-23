@@ -14,6 +14,8 @@ const LoginForm = (props) => (
 
     <div className="login-form">
 
+        <h2>Login</h2>
+
         <form className="login-form-form" onSubmit={this.onSubmit}>
 
             <TextInput
