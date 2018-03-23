@@ -42,9 +42,9 @@ class Measurements extends React.Component {
                 this.setState({measurements})
 
             })
-            .catch((error) => {
+            .catch(() => {
 
-                console.log(error)
+                // console.log(error)
 
             })
 

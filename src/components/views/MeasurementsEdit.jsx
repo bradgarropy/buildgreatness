@@ -56,9 +56,9 @@ class MeasurementsEdit extends React.Component {
                 this.setState({measurement})
 
             })
-            .catch((error) => {
+            .catch(() => {
 
-                console.log(error)
+                // console.log(error)
 
             })
 
