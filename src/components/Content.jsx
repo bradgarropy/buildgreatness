@@ -13,6 +13,7 @@ import Training from "./views/Training"
 import Nutrition from "./views/Nutrition"
 import Measurements from "./views/Measurements"
 import MeasurementsAdd from "./views/MeasurementsAdd"
+import MeasurementsEdit from "./views/MeasurementsEdit"
 import ProtectedRoute from "./ProtectedRoute"
 
 
@@ -28,6 +29,7 @@ const Content = () => (
             <ProtectedRoute exact path="/nutrition" component={Nutrition}/>
             <ProtectedRoute exact path="/measurements" component={Measurements}/>
             <ProtectedRoute exact path="/measurements/add" component={MeasurementsAdd}/>
+            <ProtectedRoute exact path="/measurements/:id" component={MeasurementsEdit}/>
         </Switch>
 
     </div>

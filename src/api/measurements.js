@@ -8,9 +8,23 @@ export function add(data) {
 }
 
 
-export function read() {
+export function readAll() {
 
     return axios.get(`${process.env.REACT_APP_API_URL}/measurements`)
+
+}
+
+
+export function readOne(id) {
+
+    return axios.get(`${process.env.REACT_APP_API_URL}/measurements/${id}`)
+
+}
+
+
+export function update(id, data) {
+
+    return axios.patch(`${process.env.REACT_APP_API_URL}/measurements/${id}`, data)
 
 }
 
@@ -18,5 +32,7 @@ export function read() {
 // exports
 export default {
     add,
-    read,
+    readAll,
+    readOne,
+    update,
 }
