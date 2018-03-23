@@ -7,8 +7,11 @@ import MeasurementsForm from "../forms/MeasurementsForm"
 // api
 import measurements from "../../api/measurements"
 
+// utils
+import {deleteEmptyKeys} from "../../utils/utils"
 
-class Measurements extends React.Component {
+
+class MeasurementsAdd extends React.Component {
 
     constructor(props) {
 
@@ -16,6 +19,7 @@ class Measurements extends React.Component {
 
         const date = new Date()
         date.setHours(0, 0, 0, 0)
+
 
         this.state = {
             errors: {},
@@ -51,15 +55,7 @@ class Measurements extends React.Component {
 
         event.preventDefault()
 
-        let measurement = Object.assign({}, this.state.measurement)
-
-        Object.keys(measurement).forEach((key) => {
-
-            if(!measurement[key]) {
-                delete measurement[key]
-            }
-
-        })
+        const measurement = deleteEmptyKeys(this.state.measurement)
 
         measurements.add(measurement)
             .then(() => {
@@ -84,7 +80,7 @@ class Measurements extends React.Component {
 
         return (
 
-            <div className="measurements">
+            <div className="measurements-add">
 
                 <MeasurementsForm
                     measurement={this.state.measurement}
@@ -103,4 +99,4 @@ class Measurements extends React.Component {
 
 
 // export
-export default Measurements
+export default MeasurementsAdd
