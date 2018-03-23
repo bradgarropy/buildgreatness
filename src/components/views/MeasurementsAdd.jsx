@@ -7,9 +7,6 @@ import MeasurementsForm from "../forms/MeasurementsForm"
 // api
 import measurements from "../../api/measurements"
 
-// utils
-import {deleteEmptyKeys} from "../../utils/utils"
-
 
 class MeasurementsAdd extends React.Component {
 
@@ -55,7 +52,7 @@ class MeasurementsAdd extends React.Component {
 
         event.preventDefault()
 
-        const measurement = deleteEmptyKeys(this.state.measurement)
+        const measurement = this.state.measurement
 
         measurements.add(measurement)
             .then(() => {
