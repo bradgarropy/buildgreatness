@@ -106,13 +106,23 @@ const MeasurementsForm = (props) => (
 
             </div>
 
-            <RaisedButton
-                className="measurements-form-button"
-                type="submit"
-                primary
-                label="submit"
-                onClick={props.onSubmit}
-            />
+            <div className="measurements-form-buttons">
+
+                <RaisedButton
+                    type="submit"
+                    primary
+                    label="submit"
+                    onClick={props.onSubmit}
+                />
+
+                <RaisedButton
+                    secondary
+                    label="delete"
+                    onClick={props.onDelete}
+                />
+
+            </div>
+
 
         </form>
 
@@ -126,6 +136,7 @@ MeasurementsForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    onDelete: PropTypes.func,
 }
 
 
