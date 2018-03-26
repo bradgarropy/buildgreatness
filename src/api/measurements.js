@@ -29,10 +29,18 @@ export function update(id, data) {
 }
 
 
+export function remove(id) {
+
+    return axios.delete(`${process.env.REACT_APP_API_URL}/measurements/${id}`)
+
+}
+
+
 // exports
 export default {
     add,
     readAll,
     readOne,
     update,
+    remove,
 }
