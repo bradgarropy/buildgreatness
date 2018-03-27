@@ -2,16 +2,16 @@ import React from "react"
 import {Redirect} from "react-router-dom"
 
 // components
-import RegisterForm from "../forms/RegisterForm"
+import UserRegisterForm from "./UserRegisterForm"
 
 // styles
-import "../../css/Register.css"
+import "./UserRegister.css"
 
 // api
 import users from "../../api/users"
 
 
-class Register extends React.Component {
+class UserRegister extends React.Component {
 
     constructor(props) {
 
@@ -72,7 +72,7 @@ class Register extends React.Component {
 
             <div className="register">
 
-                <RegisterForm
+                <UserRegisterForm
                     user={this.state.user}
                     errors={this.state.errors}
                     onChange={this.onChange}
@@ -89,4 +89,4 @@ class Register extends React.Component {
 
 
 // export
-export default Register
+export default UserRegister

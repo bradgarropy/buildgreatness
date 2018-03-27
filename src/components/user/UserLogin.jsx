@@ -4,7 +4,7 @@ import {Redirect} from "react-router-dom"
 import jwtdecode from "jwt-decode"
 
 // components
-import LoginForm from "../forms/LoginForm"
+import UserLoginForm from "./UserLoginForm"
 
 // api
 import users from "../../api/users"
@@ -80,7 +80,7 @@ class Login extends React.Component {
 
         return (
 
-            <LoginForm
+            <UserLoginForm
                 credentials={this.state.credentials}
                 errors={this.state.errors}
                 onChange={this.onChange}

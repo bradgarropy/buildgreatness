@@ -3,18 +3,18 @@ import {Route} from "react-router-dom"
 import {Switch} from "react-router-dom"
 
 // style
-import "../css/Content.css"
+import "./Content.css"
 
 // components
-import Register from "./views/Register"
-import Login from "./views/Login"
-import Landing from "./views/Landing"
-import Training from "./views/Training"
-import Nutrition from "./views/Nutrition"
-import Measurements from "./views/Measurements"
-import MeasurementsAdd from "./views/MeasurementsAdd"
-import MeasurementsEdit from "./views/MeasurementsEdit"
-import ProtectedRoute from "./ProtectedRoute"
+import UserRegister from "../user/UserRegister"
+import UserLogin from "../user/UserLogin"
+import Landing from "./Landing"
+import Training from "../training/Training"
+import Nutrition from "../nutrition/Nutrition"
+import Measurements from "../measurements/Measurements"
+import MeasurementsAdd from "../measurements/MeasurementsAdd"
+import MeasurementsEdit from "../measurements/MeasurementsEdit"
+import ProtectedRoute from "../common/ProtectedRoute"
 
 
 const Content = () => (
@@ -23,8 +23,8 @@ const Content = () => (
 
         <Switch>
             <Route exact path="/" component={Landing}/>
-            <Route exact path="/register" component={Register}/>
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={UserRegister}/>
+            <Route exact path="/login" component={UserLogin}/>
             <ProtectedRoute exact path="/training" component={Training}/>
             <ProtectedRoute exact path="/nutrition" component={Nutrition}/>
             <ProtectedRoute exact path="/measurements" component={Measurements}/>

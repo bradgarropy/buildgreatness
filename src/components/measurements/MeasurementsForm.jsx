@@ -2,14 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // components
-import NumberInput from "../inputs/NumberInput"
-import DateInput from "../inputs/DateInput"
+import NumberInput from "../common/NumberInput"
+import DateInput from "../common/DateInput"
 
 // material ui
 import RaisedButton from "material-ui/RaisedButton"
 
 // styles
-import "../../css/MeasurementsForm.css"
+import "./MeasurementsForm.css"
 
 
 const MeasurementsForm = (props) => (

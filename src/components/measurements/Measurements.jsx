@@ -16,7 +16,7 @@ import RaisedButton from "material-ui/RaisedButton"
 import measurements from "../../api/measurements"
 
 // style
-import "../../css/Measurements.css"
+import "./Measurements.css"
 
 
 class Measurements extends React.Component {

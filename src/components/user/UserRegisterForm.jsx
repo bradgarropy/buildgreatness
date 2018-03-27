@@ -2,15 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // components
-import TextInput from "../inputs/TextInput"
-import PasswordInput from "../inputs/PasswordInput"
+import TextInput from "../common/TextInput"
+import PasswordInput from "../common/PasswordInput"
 import RaisedButton from "material-ui/RaisedButton"
 
 // style
-import "../../css/RegisterForm.css"
+import "./UserRegisterForm.css"
 
 
-const RegisterForm = (props) => (
+const UserRegisterForm = (props) => (
 
     <div className="register-form">
 
@@ -78,7 +78,7 @@ const RegisterForm = (props) => (
 )
 
 
-RegisterForm.propTypes = {
+UserRegisterForm.propTypes = {
     user: PropTypes.object,
     errors: PropTypes.object,
     onChange: PropTypes.func,
@@ -87,4 +87,4 @@ RegisterForm.propTypes = {
 
 
 // export
-export default RegisterForm
+export default UserRegisterForm

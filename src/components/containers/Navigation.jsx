@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 // style
-import "../css/Navigation.css"
+import "./Navigation.css"
 
 // material ui
 import FlatButton from "material-ui/FlatButton"
@@ -13,7 +13,7 @@ import EqualizerIcon from "material-ui/svg-icons/av/equalizer"
 import MapsRestaurant from "material-ui/svg-icons/maps/restaurant"
 
 // components
-import Logo from "./Logo"
+import Logo from "../common/Logo"
 
 
 const Navigation = () => {

@@ -1,14 +1,14 @@
 import React from "react"
 
 // styles
-import "../css/User.css"
+import "./User.css"
 
 // utils
-import localstorage from "../utils/localstorage"
+import localstorage from "../../utils/localstorage"
 
 // components
-import GuestButton from "./buttons/GuestButton"
-import UserButton from "./buttons/UserButton"
+import GuestButton from "../buttons/GuestButton"
+import UserButton from "../buttons/UserButton"
 
 
 const User = () => {

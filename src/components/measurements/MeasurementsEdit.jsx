@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {Redirect} from "react-router-dom"
 
 // components
-import MeasurementsForm from "../forms/MeasurementsForm"
+import MeasurementsForm from "./MeasurementsForm"
 
 // api
 import measurements from "../../api/measurements"

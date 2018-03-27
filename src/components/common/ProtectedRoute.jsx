@@ -4,7 +4,7 @@ import {Route} from "react-router-dom"
 import {Redirect} from "react-router-dom"
 
 // utils
-import user from "../utils/user"
+import user from "../../utils/user"
 
 
 const ProtectedRoute = ({component: Component, ...props}) => {
