@@ -13,7 +13,7 @@ import MenuItem from "material-ui/MenuItem"
 import authorization from "../../utils/authorization"
 
 
-class User extends React.Component {
+class UserAuthenticatedButton extends React.Component {
 
     constructor(props) {
 
@@ -99,7 +99,7 @@ class User extends React.Component {
 
 }
 
-User.propTypes = {
+UserAuthenticatedButton.propTypes = {
     user: PropTypes.shape({
         first_name: PropTypes.string,
     }),
@@ -107,4 +107,4 @@ User.propTypes = {
 
 
 // export
-export default User
+export default UserAuthenticatedButton

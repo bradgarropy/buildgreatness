@@ -6,7 +6,7 @@ import FlatButton from "material-ui/FlatButton"
 import AccountBoxIcon from "material-ui/svg-icons/action/account-box"
 
 
-const User = () => {
+const UserUnauthenticatedButton = () => {
 
     return (
 
@@ -29,4 +29,4 @@ const User = () => {
 
 
 // export
-export default User
+export default UserUnauthenticatedButton

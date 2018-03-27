@@ -7,8 +7,8 @@ import "./User.css"
 import localstorage from "../../utils/localstorage"
 
 // components
-import GuestButton from "../buttons/GuestButton"
-import UserButton from "../buttons/UserButton"
+import UserUnauthenticatedButton from "./UserUnauthenticatedButton"
+import UserAuthenticatedButton from "./UserAuthenticatedButton"
 
 
 const User = () => {
@@ -16,8 +16,8 @@ const User = () => {
     const user = localstorage.user()
 
     const button = user
-        ? <UserButton user={user}/>
-        : <GuestButton/>
+        ? <UserAuthenticatedButton user={user}/>
+        : <UserUnauthenticatedButton/>
 
     return (
 
