@@ -17,9 +17,12 @@
     grid-template-columns: 1fr;
 }
 
-.measurements-form-buttons {
+.measurements-form-add-buttons {
+    display: grid;
+}
+
+.measurements-form-edit-buttons {
     display: grid;
     grid-column-gap: 50px;
     grid-template-columns: 1fr 1fr;
-    justify-content: stretch;
 }

@@ -33,6 +33,7 @@ class MeasurementsEdit extends React.Component {
 
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+        this.onDelete = this.onDelete.bind(this)
 
     }
 
@@ -92,6 +93,26 @@ class MeasurementsEdit extends React.Component {
 
     }
 
+    onDelete(event) {
+
+        event.preventDefault()
+
+        const id = this.props.match.params.id
+
+        measurements.remove(id)
+            .then(() => {
+
+                this.setState({redirect: true})
+
+            })
+            .catch(() => {
+
+                // console.log(error)
+
+            })
+
+    }
+
     render() {
 
         if(this.state.redirect) {
@@ -103,10 +124,12 @@ class MeasurementsEdit extends React.Component {
             <div className="measurements-add">
 
                 <MeasurementsForm
+                    update
                     measurement={this.state.measurement}
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    onDelete={this.onDelete}
                 />
 
             </div>

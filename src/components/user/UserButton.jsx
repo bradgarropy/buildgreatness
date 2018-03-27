@@ -11,7 +11,7 @@ import UserUnauthenticatedButton from "./UserUnauthenticatedButton"
 import UserAuthenticatedButton from "./UserAuthenticatedButton"
 
 
-const User = () => {
+const UserButton = () => {
 
     const user = localstorage.user()
 
@@ -31,4 +31,4 @@ const User = () => {
 
 
 // export
-export default User
+export default UserButton
