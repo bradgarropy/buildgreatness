@@ -1,5 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import {Link} from "react-router-dom"
+
+// material ui
+import RaisedButton from "material-ui/RaisedButton"
+
+// style
+import "./Food.css"
 
 
 class Food extends React.Component {
@@ -18,7 +25,22 @@ class Food extends React.Component {
 
         return (
 
-            <h1>Food</h1>
+            <div className="food">
+
+                <div className="food-header">
+
+                    <h2>Food</h2>
+
+                    <RaisedButton
+                        primary
+                        label="add"
+                        containerElement={<Link to="/nutrition/food/add"/>}
+                    />
+
+                </div>
+
+            </div>
+
 
         )
 

@@ -22,7 +22,7 @@ class Nutrition extends React.Component {
 
                 <h1>Nutrition</h1>
 
-                <Link to="/nutrition/food">Foods</Link>
+                <Link to="/nutrition/food">Food</Link>
                 <Link to="/nutrition/meals">Meals</Link>
 
             </div>
