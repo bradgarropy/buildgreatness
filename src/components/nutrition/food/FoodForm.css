@@ -1,0 +1,17 @@
+.food-form-form {
+    display: grid;
+    grid-row-gap: 50px;
+    justify-content: center;
+    grid-template-rows: auto auto auto;
+}
+
+.food-form-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    grid-column-gap: 50px;
+}
+
+.food-form-input-group {
+    display: grid;
+}
