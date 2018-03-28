@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 
 class Nutrition extends React.Component {
@@ -18,7 +19,12 @@ class Nutrition extends React.Component {
         return (
 
             <div className="nutrition">
-                nutrition
+
+                <h1>Nutrition</h1>
+
+                <Link to="/nutrition/food">Foods</Link>
+                <Link to="/nutrition/meals">Meals</Link>
+
             </div>
 
         )
