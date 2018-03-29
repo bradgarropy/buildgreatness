@@ -15,3 +15,13 @@
 .food-form-input-group {
     display: grid;
 }
+
+.food-form-add-buttons {
+    display: grid;
+}
+
+.food-form-edit-buttons {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}

@@ -13,6 +13,7 @@ import Training from "../training/Training"
 import Nutrition from "../nutrition/Nutrition"
 import Food from "../nutrition/food/Food"
 import FoodAdd from "../nutrition/food/FoodAdd"
+import FoodEdit from "../nutrition/food/FoodEdit"
 import Meals from "../nutrition/meals/Meals"
 import Measurements from "../measurements/Measurements"
 import MeasurementsAdd from "../measurements/MeasurementsAdd"
@@ -34,6 +35,7 @@ const Content = () => (
             <ProtectedRoute exact path="/nutrition" component={Nutrition}/>
             <ProtectedRoute exact path="/nutrition/food" component={Food}/>
             <ProtectedRoute exact path="/nutrition/food/add" component={FoodAdd}/>
+            <ProtectedRoute exact path="/nutrition/food/:id" component={FoodEdit}/>
             <ProtectedRoute exact path="/nutrition/meals" component={Meals}/>
             <ProtectedRoute exact path="/training" component={Training}/>
         </Switch>
