@@ -70,7 +70,7 @@ class UserRegister extends React.Component {
 
         return (
 
-            <div className="register">
+            <div className="user-register">
 
                 <UserRegisterForm
                     user={this.state.user}
