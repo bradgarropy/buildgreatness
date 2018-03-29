@@ -1,0 +1,27 @@
+.meals-form-form {
+    display: grid;
+    grid-row-gap: 50px;
+    justify-content: center;
+    grid-template-rows: auto auto auto;
+}
+
+.meals-form-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    grid-column-gap: 50px;
+}
+
+.meals-form-input-group {
+    display: grid;
+}
+
+.meals-form-add-buttons {
+    display: grid;
+}
+
+.meals-form-edit-buttons {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
