@@ -18,7 +18,10 @@ class Training extends React.Component {
         return (
 
             <div className="training">
-                training
+
+                <h2>Training</h2>
+                <p>Coming Soon</p>
+
             </div>
 
         )

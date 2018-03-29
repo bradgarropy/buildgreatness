@@ -20,7 +20,7 @@ class Nutrition extends React.Component {
 
             <div className="nutrition">
 
-                <h1>Nutrition</h1>
+                <h2>Nutrition</h2>
 
                 <Link to="/nutrition/food">Food</Link>
                 <Link to="/nutrition/meals">Meals</Link>
