@@ -117,7 +117,9 @@ class FoodEdit extends React.Component {
 
         return (
 
-            <div className="food-add">
+            <div className="food-edit">
+
+                <h2>Food Edit</h2>
 
                 <FoodForm
                     update
