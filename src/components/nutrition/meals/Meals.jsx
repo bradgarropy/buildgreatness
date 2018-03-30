@@ -53,7 +53,7 @@ class Meals extends React.Component {
 
         const selectedRow = selectedRows[0]
         const meal = this.state.meals[selectedRow]
-        const id = meal._id
+        const id = meal.id
 
         this.props.history.push(`/nutrition/meals/${id}`)
 

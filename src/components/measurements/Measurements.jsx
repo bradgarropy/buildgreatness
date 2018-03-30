@@ -54,7 +54,7 @@ class Measurements extends React.Component {
 
         const selectedRow = selectedRows[0]
         const measurement = this.state.measurements[selectedRow]
-        const id = measurement._id
+        const id = measurement.id
 
         this.props.history.push(`/measurements/${id}`)
 
