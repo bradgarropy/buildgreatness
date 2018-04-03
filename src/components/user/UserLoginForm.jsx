@@ -12,11 +12,11 @@ import "./UserLoginForm.css"
 
 const UserLoginForm = (props) => (
 
-    <div className="login-form">
+    <div className="user-login-form">
 
         <h2>Login</h2>
 
-        <form className="login-form-form" onSubmit={this.onSubmit}>
+        <form className="user-login-form-form" onSubmit={this.onSubmit}>
 
             <TextInput
                 label="Email"
@@ -38,7 +38,7 @@ const UserLoginForm = (props) => (
 
             <RaisedButton
                 type="submit"
-                className="login-form-button"
+                className="user-login-form-button"
                 primary
                 label="login"
                 onClick={props.onSubmit}
