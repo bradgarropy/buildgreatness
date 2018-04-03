@@ -5,7 +5,7 @@ import {BrowserRouter as Router} from "react-router-dom"
 import MaterialUI from "material-ui/styles/MuiThemeProvider"
 
 // components
-import Navigation from "./Navigation"
+import Navigation from "../navigation/Navigation"
 import UserButton from "../user/UserButton"
 import Content from "./Content"
 

@@ -8,7 +8,7 @@ import "./Content.css"
 // components
 import UserRegister from "../user/UserRegister"
 import UserLogin from "../user/UserLogin"
-import Landing from "./Landing"
+import Landing from "../landing/Landing"
 import Training from "../training/Training"
 import Nutrition from "../nutrition/Nutrition"
 import Food from "../nutrition/food/Food"

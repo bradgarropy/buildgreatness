@@ -6,7 +6,7 @@ import registerServiceWorker from "./registerServiceWorker"
 import App from "./components/containers/App.jsx"
 
 // styles
-import "./components/containers/index.css"
+import "./index.css"
 
 
 ReactDOM.render(
