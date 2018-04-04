@@ -10,7 +10,8 @@ import PersonAddIcon from "material-ui/svg-icons/social/person-add"
 import HomeIcon from "material-ui/svg-icons/action/home"
 import FitnessCenterIcon from "material-ui/svg-icons/places/fitness-center"
 import EqualizerIcon from "material-ui/svg-icons/av/equalizer"
-import MapsRestaurant from "material-ui/svg-icons/maps/restaurant"
+import MapsRestaurantIcon from "material-ui/svg-icons/maps/restaurant"
+import FeedbackIcon from "material-ui/svg-icons/action/feedback"
 
 // components
 import Logo from "../common/Logo"
@@ -41,6 +42,14 @@ const Navigation = () => {
             />
 
             <FlatButton
+                label="feedback"
+                hoverColor="none"
+                disableTouchRipple
+                containerElement={<Link to="/feedback"/>}
+                icon={<FeedbackIcon/>}
+            />
+
+            <FlatButton
                 label="training"
                 hoverColor="none"
                 disableTouchRipple
@@ -61,7 +70,7 @@ const Navigation = () => {
                 hoverColor="none"
                 disableTouchRipple
                 containerElement={<Link to="/nutrition"/>}
-                icon={<MapsRestaurant/>}
+                icon={<MapsRestaurantIcon/>}
             />
 
         </div>

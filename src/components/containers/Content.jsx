@@ -8,6 +8,7 @@ import "./Content.css"
 // components
 import UserRegister from "../user/UserRegister"
 import UserLogin from "../user/UserLogin"
+import Feedback from "../feedback/Feedback"
 import Landing from "../landing/Landing"
 import Training from "../training/Training"
 import Nutrition from "../nutrition/Nutrition"
@@ -31,6 +32,7 @@ const Content = () => (
             <Route exact path="/" component={Landing}/>
             <Route exact path="/register" component={UserRegister}/>
             <Route exact path="/login" component={UserLogin}/>
+            <ProtectedRoute exact path="/feedback" component={Feedback}/>
             <ProtectedRoute exact path="/measurements" component={Measurements}/>
             <ProtectedRoute exact path="/measurements/add" component={MeasurementsAdd}/>
             <ProtectedRoute exact path="/measurements/:id" component={MeasurementsEdit}/>
