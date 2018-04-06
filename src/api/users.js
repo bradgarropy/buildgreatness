@@ -15,16 +15,16 @@ export function login(data) {
 }
 
 
-export function readOne(id) {
+export function readOne() {
 
-    return axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`)
+    return axios.get(`${process.env.REACT_APP_API_URL}/users`)
 
 }
 
 
-export function update(id, data) {
+export function update(data) {
 
-    return axios.patch(`${process.env.REACT_APP_API_URL}/users/${id}`, data)
+    return axios.patch(`${process.env.REACT_APP_API_URL}/users`, data)
 
 }
 

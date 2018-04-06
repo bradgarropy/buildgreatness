@@ -39,9 +39,7 @@ class UserSettings extends React.Component {
 
     componentDidMount() {
 
-        let user = localstorage.user()
-
-        users.readOne(user.id)
+        users.readOne()
             .then(response => {
 
                 let user = Object.assign(
@@ -74,9 +72,7 @@ class UserSettings extends React.Component {
 
         event.preventDefault()
 
-        const user = localstorage.user()
-
-        users.update(user.id, this.state.user)
+        users.update(this.state.user)
             .then(response => {
 
                 const token = response.data.token
