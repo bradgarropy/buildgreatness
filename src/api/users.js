@@ -15,8 +15,24 @@ export function login(data) {
 }
 
 
+export function readOne(id) {
+
+    return axios.get(`${process.env.REACT_APP_API_URL}/users/${id}`)
+
+}
+
+
+export function update(id, data) {
+
+    return axios.patch(`${process.env.REACT_APP_API_URL}/users/${id}`, data)
+
+}
+
+
 // exports
 export default {
     register,
     login,
+    readOne,
+    update,
 }

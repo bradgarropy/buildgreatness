@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Redirect} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 // material ui
 import FlatButton from "material-ui/FlatButton"
@@ -84,6 +85,11 @@ class UserAuthenticatedButton extends React.Component {
                     onRequestClose={this.onRequestClose}
                 >
                     <Menu>
+                        <MenuItem
+                            primaryText="Settings"
+                            containerElement={<Link to="/settings"/>}
+                            onClick={this.onRequestClose}
+                        />
                         <MenuItem
                             primaryText="Logout"
                             onClick={this.onLogout}
