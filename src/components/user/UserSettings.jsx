@@ -12,7 +12,6 @@ import "./UserSettings.css"
 import users from "../../api/users"
 
 // utils
-import localstorage from "../../utils/localstorage"
 import authorization from "../../utils/authorization"
 
 
