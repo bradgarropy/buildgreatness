@@ -29,10 +29,18 @@ export function update(data) {
 }
 
 
+export function password(data) {
+
+    return axios.post(`${process.env.REACT_APP_API_URL}/users/password`, data)
+
+}
+
+
 // exports
 export default {
     register,
     login,
     readOne,
     update,
+    password,
 }
