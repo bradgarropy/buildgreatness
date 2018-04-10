@@ -9,6 +9,7 @@ import ExpandMoreIcon from "material-ui/svg-icons/navigation/expand-more"
 import Popover from "material-ui/Popover"
 import Menu from "material-ui/Menu"
 import MenuItem from "material-ui/MenuItem"
+import Divider from "material-ui/Divider"
 
 // utils
 import authorization from "../../utils/authorization"
@@ -86,10 +87,16 @@ class UserAuthenticatedButton extends React.Component {
                 >
                     <Menu>
                         <MenuItem
-                            primaryText="Settings"
-                            containerElement={<Link to="/settings"/>}
+                            primaryText="Account"
+                            containerElement={<Link to="/settings/account"/>}
                             onClick={this.onRequestClose}
                         />
+                        <MenuItem
+                            primaryText="Password"
+                            containerElement={<Link to="/settings/password"/>}
+                            onClick={this.onRequestClose}
+                        />
+                        <Divider/>
                         <MenuItem
                             primaryText="Logout"
                             onClick={this.onLogout}

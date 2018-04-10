@@ -8,7 +8,8 @@ import "./Content.css"
 // components
 import UserRegister from "../user/UserRegister"
 import UserLogin from "../user/UserLogin"
-import UserSettings from "../user/UserSettings"
+import UserSettingsAccount from "../user/UserSettingsAccount"
+import UserSettingsPassword from "../user/UserSettingsPassword"
 import Feedback from "../feedback/Feedback"
 import Landing from "../landing/Landing"
 import Training from "../training/Training"
@@ -34,7 +35,8 @@ const Content = () => (
             <Route exact path="/register" component={UserRegister}/>
             <Route exact path="/login" component={UserLogin}/>
             <ProtectedRoute exact path="/feedback" component={Feedback}/>
-            <ProtectedRoute exact path="/settings" component={UserSettings}/>
+            <ProtectedRoute exact path="/settings/account" component={UserSettingsAccount}/>
+            <ProtectedRoute exact path="/settings/password" component={UserSettingsPassword}/>
             <ProtectedRoute exact path="/measurements" component={Measurements}/>
             <ProtectedRoute exact path="/measurements/add" component={MeasurementsAdd}/>
             <ProtectedRoute exact path="/measurements/:id" component={MeasurementsEdit}/>

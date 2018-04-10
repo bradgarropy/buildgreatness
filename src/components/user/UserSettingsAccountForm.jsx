@@ -6,16 +6,16 @@ import TextInput from "../common/TextInput"
 import RaisedButton from "material-ui/RaisedButton"
 
 // styles
-import "./UserSettingsForm.css"
+import "./UserSettingsAccountForm.css"
 
 
-const UserSettingsForm = (props) => (
+const UserSettingsAccountForm = (props) => (
 
-    <div className="user-settings-form">
+    <div className="user-settings-account-form">
 
-        <h2>Settings</h2>
+        <h2>Account Settings</h2>
 
-        <form className="user-settings-form-form" onSubmit={this.onSubmit}>
+        <form className="user-settings-account-form-form" onSubmit={this.onSubmit}>
 
             <TextInput
                 label="First Name"
@@ -46,7 +46,7 @@ const UserSettingsForm = (props) => (
 
             <RaisedButton
                 type="submit"
-                className="user-settings-form-button"
+                className="user-settings-account-form-button"
                 primary
                 label="update"
                 onClick={props.onSubmit}
@@ -59,7 +59,7 @@ const UserSettingsForm = (props) => (
 )
 
 
-UserSettingsForm.propTypes = {
+UserSettingsAccountForm.propTypes = {
     user: PropTypes.object,
     errors: PropTypes.object,
     onChange: PropTypes.func,
@@ -68,4 +68,4 @@ UserSettingsForm.propTypes = {
 
 
 // export
-export default UserSettingsForm
+export default UserSettingsAccountForm

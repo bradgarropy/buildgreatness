@@ -3,10 +3,10 @@ import {Redirect} from "react-router-dom"
 import jwtdecode from "jwt-decode"
 
 // components
-import UserSettingsForm from "./UserSettingsForm"
+import UserSettingsAccountForm from "./UserSettingsAccountForm"
 
 // styles
-import "./UserSettings.css"
+import "./UserSettingsAccount.css"
 
 // api
 import users from "../../api/users"
@@ -15,7 +15,7 @@ import users from "../../api/users"
 import authorization from "../../utils/authorization"
 
 
-class UserSettings extends React.Component {
+class UserSettingsAccount extends React.Component {
 
     constructor(props) {
 
@@ -103,9 +103,9 @@ class UserSettings extends React.Component {
 
         return (
 
-            <div className="user-settings">
+            <div className="user-settings-account">
 
-                <UserSettingsForm
+                <UserSettingsAccountForm
                     user={this.state.user}
                     errors={this.state.errors}
                     onChange={this.onChange}
@@ -122,4 +122,4 @@ class UserSettings extends React.Component {
 
 
 // export
-export default UserSettings
+export default UserSettingsAccount
