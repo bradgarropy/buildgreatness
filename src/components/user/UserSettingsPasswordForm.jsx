@@ -43,7 +43,7 @@ const UserSettingsPasswordForm = (props) => (
             />
 
             <PasswordInput
-                label="Confirmation"
+                label="Confirm Password"
                 name="confirmation"
                 value={props.passwords.confirmation}
                 autocomplete="new-password"

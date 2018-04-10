@@ -6,12 +6,12 @@ import "./Navigation.css"
 
 // material ui
 import FlatButton from "material-ui/FlatButton"
-import PersonAddIcon from "material-ui/svg-icons/social/person-add"
 import HomeIcon from "material-ui/svg-icons/action/home"
+import PersonAddIcon from "material-ui/svg-icons/social/person-add"
+import FeedbackIcon from "material-ui/svg-icons/action/feedback"
 import FitnessCenterIcon from "material-ui/svg-icons/places/fitness-center"
 import EqualizerIcon from "material-ui/svg-icons/av/equalizer"
 import MapsRestaurantIcon from "material-ui/svg-icons/maps/restaurant"
-import FeedbackIcon from "material-ui/svg-icons/action/feedback"
 
 // components
 import Logo from "../common/Logo"
