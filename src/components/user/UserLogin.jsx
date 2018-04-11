@@ -1,7 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import {Redirect} from "react-router-dom"
+import {Link} from "react-router-dom"
 import jwtdecode from "jwt-decode"
+
+// material ui
+import FlatButton from "material-ui/FlatButton"
 
 // components
 import UserLoginForm from "./UserLoginForm"
@@ -90,6 +94,12 @@ class Login extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                />
+
+                <FlatButton
+                    label="forgot your password?"
+                    hoverColor="none"
+                    containerElement={<Link to="/forgot"/>}
                 />
 
             </div>

@@ -36,6 +36,13 @@ export function password(data) {
 }
 
 
+export function forgot(data) {
+
+    return axios.post(`${process.env.REACT_APP_API_URL}/users/forgot`, data)
+
+}
+
+
 // exports
 export default {
     register,
@@ -43,4 +50,5 @@ export default {
     readOne,
     update,
     password,
+    forgot,
 }
