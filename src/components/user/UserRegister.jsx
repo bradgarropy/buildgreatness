@@ -19,7 +19,7 @@ class UserRegister extends React.Component {
 
         this.state = {
             errors: {},
-            user: {
+            form: {
                 first_name: "",
                 last_name: "",
                 email: "",
@@ -27,6 +27,7 @@ class UserRegister extends React.Component {
                 confirmation: "",
             },
             submitted: false,
+            completed: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -36,10 +37,10 @@ class UserRegister extends React.Component {
 
     onChange(name, value) {
 
-        let user = this.state.user
-        user[name] = value
+        let form = this.state.form
+        form[name] = value
 
-        this.setState({user})
+        this.setState({form})
 
     }
 
@@ -47,16 +48,21 @@ class UserRegister extends React.Component {
 
         event.preventDefault()
 
-        users.register(this.state.user)
+        this.setState({submitted: true})
+
+        users.register(this.state.form)
             .then(() => {
 
-                this.setState({submitted: true})
+                this.setState({completed: true})
 
             })
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -74,21 +80,22 @@ class UserRegister extends React.Component {
 
                 <h2>Register</h2>
 
-                {this.state.submitted ?
+                {this.state.completed ?
 
                     <div>
                         <h3>Thank you for registering!</h3>
                         <p>The next step is to activate your account.</p>
-                        <p>An email was sent to <em>{this.state.user.email}</em> with the activation link.</p>
+                        <p>An email was sent to <em>{this.state.form.email}</em> with the activation link.</p>
                     </div>
 
                     :
 
                     <UserRegisterForm
-                        user={this.state.user}
+                        form={this.state.form}
                         errors={this.state.errors}
                         onChange={this.onChange}
                         onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
                     />
                 }
 

@@ -19,7 +19,7 @@ const UserRegisterForm = (props) => (
             <TextInput
                 label="First Name"
                 name="first_name"
-                value={props.user.first_name}
+                value={props.form.first_name}
                 autocomplete="given-name"
                 error={props.errors.first_name}
                 onChange={props.onChange}
@@ -28,7 +28,7 @@ const UserRegisterForm = (props) => (
             <TextInput
                 label="Last Name"
                 name="last_name"
-                value={props.user.last_name}
+                value={props.form.last_name}
                 autocomplete="family-name"
                 error={props.errors.last_name}
                 onChange={props.onChange}
@@ -37,7 +37,7 @@ const UserRegisterForm = (props) => (
             <TextInput
                 label="Email"
                 name="email"
-                value={props.user.email}
+                value={props.form.email}
                 autocomplete="email"
                 error={props.errors.email}
                 onChange={props.onChange}
@@ -46,7 +46,7 @@ const UserRegisterForm = (props) => (
             <PasswordInput
                 label="Password"
                 name="password"
-                value={props.user.password}
+                value={props.form.password}
                 autocomplete="new-password"
                 error={props.errors.password}
                 onChange={props.onChange}
@@ -55,7 +55,7 @@ const UserRegisterForm = (props) => (
             <PasswordInput
                 label="Confirm Password"
                 name="confirmation"
-                value={props.user.confirmation}
+                value={props.form.confirmation}
                 autocomplete="new-password"
                 error={props.errors.confirmation}
                 onChange={props.onChange}
@@ -67,6 +67,7 @@ const UserRegisterForm = (props) => (
                 primary
                 label="register"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -77,10 +78,11 @@ const UserRegisterForm = (props) => (
 
 
 UserRegisterForm.propTypes = {
-    user: PropTypes.object,
+    form: PropTypes.object,
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 
