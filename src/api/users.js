@@ -50,6 +50,13 @@ export function reset(data) {
 }
 
 
+export function activate(data) {
+
+    return axios.post(`${process.env.REACT_APP_API_URL}/users/activate`, data)
+
+}
+
+
 // exports
 export default {
     register,
@@ -59,4 +66,5 @@ export default {
     password,
     forgot,
     reset,
+    activate,
 }

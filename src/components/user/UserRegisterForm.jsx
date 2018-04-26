@@ -14,8 +14,6 @@ const UserRegisterForm = (props) => (
 
     <div className="user-register-form">
 
-        <h2>Register</h2>
-
         <form className="user-register-form-form" onSubmit={this.onSubmit}>
 
             <TextInput

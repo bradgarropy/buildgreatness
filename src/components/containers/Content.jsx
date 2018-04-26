@@ -7,6 +7,7 @@ import "./Content.css"
 
 // components
 import UserRegister from "../user/UserRegister"
+import UserActivate from "../user/UserActivate"
 import UserLogin from "../user/UserLogin"
 import UserForgot from "../user/UserForgot"
 import UserReset from "../user/UserReset"
@@ -35,6 +36,7 @@ const Content = () => (
         <Switch>
             <Route exact path="/" component={Landing}/>
             <Route exact path="/register" component={UserRegister}/>
+            <Route exact path="/activate/:token" component={UserActivate}/>
             <Route exact path="/login" component={UserLogin}/>
             <Route exact path="/forgot" component={UserForgot}/>
             <Route exact path="/reset/:token" component={UserReset}/>

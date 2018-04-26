@@ -26,7 +26,7 @@ class UserRegister extends React.Component {
                 password: "",
                 confirmation: "",
             },
-            redirect: false,
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -50,7 +50,7 @@ class UserRegister extends React.Component {
         users.register(this.state.user)
             .then(() => {
 
-                this.setState({redirect: true})
+                this.setState({submitted: true})
 
             })
             .catch(error => {
@@ -72,12 +72,25 @@ class UserRegister extends React.Component {
 
             <div className="user-register">
 
-                <UserRegisterForm
-                    user={this.state.user}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                />
+                <h2>Register</h2>
+
+                {this.state.submitted ?
+
+                    <div>
+                        <h3>Thank you for registering!</h3>
+                        <p>The next step is to activate your account.</p>
+                        <p>An email was sent to <em>{this.state.user.email}</em> with the activation link.</p>
+                    </div>
+
+                    :
+
+                    <UserRegisterForm
+                        user={this.state.user}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                    />
+                }
 
             </div>
 
