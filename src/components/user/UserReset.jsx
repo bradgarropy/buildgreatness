@@ -21,7 +21,7 @@ class UserReset extends React.Component {
         this.state = {
             errors: {},
             form: {
-                password: "",
+                new_password: "",
                 confirmation: "",
             },
             redirect: false,

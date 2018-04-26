@@ -25,11 +25,11 @@ const UserResetForm = (props) => (
             />
 
             <PasswordInput
-                label="Password"
-                name="password"
-                value={props.form.password}
+                label="New Password"
+                name="new_password"
+                value={props.form.new_password}
                 autocomplete="new-password"
-                error={props.errors.password}
+                error={props.errors.new_password}
                 onChange={props.onChange}
             />
 
