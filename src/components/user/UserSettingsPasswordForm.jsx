@@ -57,6 +57,7 @@ const UserSettingsPasswordForm = (props) => (
                 primary
                 label="change"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -71,6 +72,7 @@ UserSettingsPasswordForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 

@@ -20,7 +20,7 @@ import authorization from "../../utils/authorization"
 import "./UserLogin.css"
 
 
-class Login extends React.Component {
+class UserLogin extends React.Component {
 
     constructor(props) {
 
@@ -32,6 +32,7 @@ class Login extends React.Component {
                 email: "",
                 password: "",
             },
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -52,6 +53,8 @@ class Login extends React.Component {
 
         event.preventDefault()
 
+        this.setState({submitted: true})
+
         users.login(this.state.credentials)
             .then((response) => {
 
@@ -69,7 +72,11 @@ class Login extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -94,16 +101,17 @@ class Login extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.submitted}
                 />
 
                 <FlatButton
                     label="forgot your password?"
                     hoverColor="none"
+                    disableTouchRipple
                     containerElement={<Link to="/forgot"/>}
                 />
 
             </div>
-
 
         )
 
@@ -112,7 +120,7 @@ class Login extends React.Component {
 }
 
 
-Login.propTypes = {
+UserLogin.propTypes = {
     location: PropTypes.shape({
         state: PropTypes.shape({
             referrer: PropTypes.string,
@@ -122,4 +130,4 @@ Login.propTypes = {
 
 
 // export
-export default Login
+export default UserLogin

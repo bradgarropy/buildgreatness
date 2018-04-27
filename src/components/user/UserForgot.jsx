@@ -23,6 +23,7 @@ class UserForgot extends React.Component {
                 email: "",
             },
             redirect: false,
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -43,6 +44,8 @@ class UserForgot extends React.Component {
 
         event.preventDefault()
 
+        this.setState({submitted: true})
+
         users.forgot(this.state.user)
             .then(() => {
 
@@ -52,7 +55,11 @@ class UserForgot extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -73,6 +80,7 @@ class UserForgot extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.submitted}
                 />
 
             </div>

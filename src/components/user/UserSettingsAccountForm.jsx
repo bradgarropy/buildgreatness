@@ -50,6 +50,7 @@ const UserSettingsAccountForm = (props) => (
                 primary
                 label="update"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -64,6 +65,7 @@ UserSettingsAccountForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 

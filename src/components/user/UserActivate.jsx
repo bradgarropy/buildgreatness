@@ -51,8 +51,7 @@ class UserActivate extends React.Component {
                 <p>Your account has been activated, now get started!</p>
 
                 <RaisedButton
-                    type="submit"
-                    className="user-login-form-button"
+                    className="user-activate-button"
                     primary
                     label="login"
                     containerElement={<Link to="/login"/>}

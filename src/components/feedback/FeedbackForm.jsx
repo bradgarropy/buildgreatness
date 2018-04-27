@@ -31,6 +31,7 @@ const FeedbackForm = (props) => (
                 primary
                 label="submit"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </div>
@@ -46,6 +47,7 @@ FeedbackForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 

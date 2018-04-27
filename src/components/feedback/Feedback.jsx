@@ -21,6 +21,7 @@ class Feedback extends React.Component {
             errors: {},
             feedback: "",
             redirect: false,
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -38,6 +39,8 @@ class Feedback extends React.Component {
 
         event.preventDefault()
 
+        this.setState({submitted: true})
+
         feedback.send({feedback: this.state.feedback})
             .then(() => {
 
@@ -47,7 +50,11 @@ class Feedback extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -68,6 +75,7 @@ class Feedback extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.submitted}
                 />
 
             </div>

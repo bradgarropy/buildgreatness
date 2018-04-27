@@ -59,6 +59,7 @@ class UserRegister extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
+
                 this.setState({
                     errors,
                     submitted: false,

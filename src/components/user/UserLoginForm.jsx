@@ -42,6 +42,7 @@ const UserLoginForm = (props) => (
                 primary
                 label="login"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -56,6 +57,7 @@ UserLoginForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 

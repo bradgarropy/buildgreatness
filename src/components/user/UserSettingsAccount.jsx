@@ -29,6 +29,7 @@ class UserSettingsAccount extends React.Component {
                 email: "",
             },
             redirect: false,
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -71,6 +72,8 @@ class UserSettingsAccount extends React.Component {
 
         event.preventDefault()
 
+        this.setState({submitted: true})
+
         users.update(this.state.user)
             .then(response => {
 
@@ -88,7 +91,11 @@ class UserSettingsAccount extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -110,6 +117,7 @@ class UserSettingsAccount extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.submitted}
                 />
 
             </div>

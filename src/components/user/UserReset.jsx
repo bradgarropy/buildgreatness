@@ -25,6 +25,7 @@ class UserReset extends React.Component {
                 confirmation: "",
             },
             redirect: false,
+            submitted: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -45,6 +46,8 @@ class UserReset extends React.Component {
 
         event.preventDefault()
 
+        this.setState({submitted: true})
+
         const data = {
             token: this.props.match.params.token,
             ...this.state.form,
@@ -59,7 +62,11 @@ class UserReset extends React.Component {
             .catch(error => {
 
                 const errors = error.response.data
-                this.setState({errors})
+
+                this.setState({
+                    errors,
+                    submitted: false,
+                })
 
             })
 
@@ -80,6 +87,7 @@ class UserReset extends React.Component {
                     errors={this.state.errors}
                     onChange={this.onChange}
                     onSubmit={this.onSubmit}
+                    disabled={this.state.submitted}
                 />
 
             </div>

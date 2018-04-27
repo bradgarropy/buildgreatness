@@ -9,7 +9,7 @@ import RaisedButton from "material-ui/RaisedButton"
 import "./UserForgotForm.css"
 
 
-const UserRegisterForm = (props) => (
+const UserForgotForm = (props) => (
 
     <div className="user-forgot-form">
 
@@ -32,6 +32,7 @@ const UserRegisterForm = (props) => (
                 primary
                 label="submit"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -41,13 +42,14 @@ const UserRegisterForm = (props) => (
 )
 
 
-UserRegisterForm.propTypes = {
+UserForgotForm.propTypes = {
     user: PropTypes.object,
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 
 // export
-export default UserRegisterForm
+export default UserForgotForm

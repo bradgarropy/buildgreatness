@@ -48,6 +48,7 @@ const UserResetForm = (props) => (
                 primary
                 label="reset"
                 onClick={props.onSubmit}
+                disabled={props.disabled}
             />
 
         </form>
@@ -62,6 +63,7 @@ UserResetForm.propTypes = {
     errors: PropTypes.object,
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    disabled: PropTypes.bool,
 }
 
 

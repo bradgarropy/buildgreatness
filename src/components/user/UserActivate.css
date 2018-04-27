@@ -3,3 +3,7 @@
     justify-content: center;
     align-content: start;
 }
+
+.user-activate-button {
+    margin: 20px 0px;
+}
