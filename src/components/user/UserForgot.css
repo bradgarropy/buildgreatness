@@ -1,4 +1,5 @@
 .user-forgot {
     display: grid;
     justify-content: center;
+    align-content: start;
 }

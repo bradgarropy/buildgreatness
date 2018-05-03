@@ -13,8 +13,6 @@ const UserResetForm = (props) => (
 
     <div className="user-reset-form">
 
-        <h2>Password Reset</h2>
-
         <form className="user-reset-form-form" onSubmit={this.onSubmit}>
 
             <input

@@ -13,8 +13,6 @@ const FeedbackForm = (props) => (
 
     <div className="feedback-form">
 
-        <h2>Feedback</h2>
-
         <div className="feedback-form-form">
 
             <TextArea

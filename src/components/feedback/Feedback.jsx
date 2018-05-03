@@ -1,5 +1,4 @@
 import React from "react"
-import {Redirect} from "react-router-dom"
 
 // components
 import FeedbackForm from "./FeedbackForm"
@@ -20,8 +19,8 @@ class Feedback extends React.Component {
         this.state = {
             errors: {},
             feedback: "",
-            redirect: false,
             submitted: false,
+            completed: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -44,7 +43,7 @@ class Feedback extends React.Component {
         feedback.send({feedback: this.state.feedback})
             .then(() => {
 
-                this.setState({redirect: true})
+                this.setState({completed: true})
 
             })
             .catch(error => {
@@ -62,21 +61,27 @@ class Feedback extends React.Component {
 
     render() {
 
-        if(this.state.redirect) {
-            return <Redirect to="/"/>
-        }
-
         return (
 
             <div className="feedback">
 
-                <FeedbackForm
-                    feedback={this.state.feedback}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                    disabled={this.state.submitted}
-                />
+                <h2>Feedback</h2>
+
+                {this.state.completed ?
+
+                    <p>Thank you for your feedback!</p>
+
+                    :
+
+                    <FeedbackForm
+                        feedback={this.state.feedback}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
+                    />
+
+                }
 
             </div>
 

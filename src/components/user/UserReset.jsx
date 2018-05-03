@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {Redirect} from "react-router-dom"
 
 // components
 import UserResetForm from "../user/UserResetForm"
@@ -24,8 +23,8 @@ class UserReset extends React.Component {
                 new_password: "",
                 confirmation: "",
             },
-            redirect: false,
             submitted: false,
+            completed: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -56,7 +55,7 @@ class UserReset extends React.Component {
         users.reset(data)
             .then(() => {
 
-                this.setState({redirect: true})
+                this.setState({completed: true})
 
             })
             .catch(error => {
@@ -74,21 +73,27 @@ class UserReset extends React.Component {
 
     render() {
 
-        if(this.state.redirect) {
-            return <Redirect to="/login"/>
-        }
-
         return (
 
             <div className="user-register">
 
-                <UserResetForm
-                    form={this.state.form}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                    disabled={this.state.submitted}
-                />
+                <h2>Password Reset</h2>
+
+                {this.state.completed ?
+
+                    <p>Your password has been reset!</p>
+
+                    :
+
+                    <UserResetForm
+                        form={this.state.form}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
+                    />
+
+                }
 
             </div>
 

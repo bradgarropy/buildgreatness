@@ -1,5 +1,4 @@
 import React from "react"
-import {Redirect} from "react-router-dom"
 
 // components
 import UserRegisterForm from "./UserRegisterForm"
@@ -71,10 +70,6 @@ class UserRegister extends React.Component {
 
     render() {
 
-        if(this.state.redirect) {
-            return <Redirect to="/login"/>
-        }
-
         return (
 
             <div className="user-register">
@@ -83,11 +78,7 @@ class UserRegister extends React.Component {
 
                 {this.state.completed ?
 
-                    <div>
-                        <h3>Thank you for registering!</h3>
-                        <p>The next step is to activate your account.</p>
-                        <p>An email was sent to <em>{this.state.form.email}</em> with the activation link.</p>
-                    </div>
+                    <p>An email has been sent to <b>{this.state.form.email}</b> containing a link to activate your account.</p>
 
                     :
 
@@ -98,6 +89,7 @@ class UserRegister extends React.Component {
                         onSubmit={this.onSubmit}
                         disabled={this.state.submitted}
                     />
+
                 }
 
             </div>

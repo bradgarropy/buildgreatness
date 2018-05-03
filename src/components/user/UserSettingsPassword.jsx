@@ -1,5 +1,4 @@
 import React from "react"
-import {Redirect} from "react-router-dom"
 import jwtdecode from "jwt-decode"
 
 // components
@@ -28,8 +27,8 @@ class UserSettingsPassword extends React.Component {
                 new_password: "",
                 confirmation: "",
             },
-            redirect: false,
             submitted: false,
+            completed: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -63,7 +62,7 @@ class UserSettingsPassword extends React.Component {
 
                 authorization.headers()
 
-                this.setState({redirect: true})
+                this.setState({completed: true})
 
             })
             .catch(error => {
@@ -81,21 +80,27 @@ class UserSettingsPassword extends React.Component {
 
     render() {
 
-        if(this.state.redirect) {
-            return <Redirect to="/"/>
-        }
-
         return (
 
             <div className="user-settings-password">
 
-                <UserSettingsPasswordForm
-                    passwords={this.state.passwords}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                    disabled={this.state.submitted}
-                />
+                <h2>Password Settings</h2>
+
+                {this.state.completed ?
+
+                    <p>Your password has been changed!</p>
+
+                    :
+
+                    <UserSettingsPasswordForm
+                        passwords={this.state.passwords}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
+                    />
+
+                }
 
             </div>
 

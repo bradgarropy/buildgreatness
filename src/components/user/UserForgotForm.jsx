@@ -13,8 +13,6 @@ const UserForgotForm = (props) => (
 
     <div className="user-forgot-form">
 
-        <h2>Forgot Password</h2>
-
         <form className="user-forgot-form-form" onSubmit={this.onSubmit}>
 
             <TextInput

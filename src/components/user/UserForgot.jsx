@@ -1,5 +1,4 @@
 import React from "react"
-import {Redirect} from "react-router-dom"
 
 // components
 import UserForgotForm from "../user/UserForgotForm"
@@ -22,8 +21,8 @@ class UserForgot extends React.Component {
             user: {
                 email: "",
             },
-            redirect: false,
             submitted: false,
+            completed: false,
         }
 
         this.onChange = this.onChange.bind(this)
@@ -49,7 +48,7 @@ class UserForgot extends React.Component {
         users.forgot(this.state.user)
             .then(() => {
 
-                this.setState({redirect: true})
+                this.setState({completed: true})
 
             })
             .catch(error => {
@@ -67,21 +66,27 @@ class UserForgot extends React.Component {
 
     render() {
 
-        if(this.state.redirect) {
-            return <Redirect to="/login"/>
-        }
-
         return (
 
             <div className="user-forgot">
 
-                <UserForgotForm
-                    user={this.state.user}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                    disabled={this.state.submitted}
-                />
+                <h2>Forgot Password</h2>
+
+                {this.state.completed ?
+
+                    <p>An email has been sent to <b>{this.state.user.email}</b> containing a link to reset your password.</p>
+
+                    :
+
+                    <UserForgotForm
+                        user={this.state.user}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
+                    />
+
+                }
 
             </div>
 

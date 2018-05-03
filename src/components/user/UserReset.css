@@ -1,4 +1,5 @@
 .user-reset {
     display: grid;
     justify-content: center;
+    align-content: start;
 }

@@ -13,8 +13,6 @@ const UserSettingsPasswordForm = (props) => (
 
     <div className="user-settings-password-form">
 
-        <h2>Password Settings</h2>
-
         <form className="user-settings-password-form-form" onSubmit={this.onSubmit}>
 
             <input
