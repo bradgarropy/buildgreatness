@@ -1,5 +1,4 @@
 import React from "react"
-import jwtdecode from "jwt-decode"
 
 // components
 import UserSettingsPasswordForm from "./UserSettingsPasswordForm"
@@ -9,9 +8,6 @@ import "./UserSettingsPassword.css"
 
 // api
 import users from "../../api/users"
-
-// utils
-import authorization from "../../utils/authorization"
 
 
 class UserSettingsPassword extends React.Component {
@@ -54,13 +50,9 @@ class UserSettingsPassword extends React.Component {
         users.password(this.state.passwords)
             .then(response => {
 
-                const token = response.data.token
-                let user = jwtdecode(token)
+                const user = response.data.user
 
                 localStorage.setItem("user", JSON.stringify(user))
-                localStorage.setItem("token", JSON.stringify(token))
-
-                authorization.headers()
 
                 this.setState({completed: true})
 

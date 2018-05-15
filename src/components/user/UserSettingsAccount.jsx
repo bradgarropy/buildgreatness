@@ -1,6 +1,5 @@
 import React from "react"
 import {Redirect} from "react-router-dom"
-import jwtdecode from "jwt-decode"
 
 // components
 import UserSettingsAccountForm from "./UserSettingsAccountForm"
@@ -10,9 +9,6 @@ import "./UserSettingsAccount.css"
 
 // api
 import users from "../../api/users"
-
-// utils
-import authorization from "../../utils/authorization"
 
 
 class UserSettingsAccount extends React.Component {
@@ -45,7 +41,7 @@ class UserSettingsAccount extends React.Component {
                 let user = Object.assign(
                     {},
                     this.state.user,
-                    response.data
+                    response.data.user,
                 )
 
                 this.setState({user})
@@ -77,13 +73,9 @@ class UserSettingsAccount extends React.Component {
         users.update(this.state.user)
             .then(response => {
 
-                const token = response.data.token
-                let user = jwtdecode(token)
+                const user = response.data.user
 
                 localStorage.setItem("user", JSON.stringify(user))
-                localStorage.setItem("token", JSON.stringify(token))
-
-                authorization.headers()
 
                 this.setState({redirect: true})
 

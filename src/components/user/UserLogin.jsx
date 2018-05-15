@@ -2,13 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import {Redirect} from "react-router-dom"
 import {Link} from "react-router-dom"
-import jwtdecode from "jwt-decode"
 
 // material ui
 import FlatButton from "material-ui/FlatButton"
 
 // components
-import UserLoginForm from "./UserLoginForm"
+import UserLoginForm from "../user/UserLoginForm"
 
 // api
 import users from "../../api/users"
@@ -58,8 +57,8 @@ class UserLogin extends React.Component {
         users.login(this.state.credentials)
             .then((response) => {
 
+                const user = response.data.user
                 const token = response.data.token
-                let user = jwtdecode(token)
 
                 localStorage.setItem("user", JSON.stringify(user))
                 localStorage.setItem("token", JSON.stringify(token))
