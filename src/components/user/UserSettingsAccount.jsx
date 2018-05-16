@@ -3,6 +3,7 @@ import {Redirect} from "react-router-dom"
 
 // components
 import UserSettingsAccountForm from "./UserSettingsAccountForm"
+import Loading from "../common/Loading"
 
 // styles
 import "./UserSettingsAccount.css"
@@ -18,6 +19,7 @@ class UserSettingsAccount extends React.Component {
         super(props)
 
         this.state = {
+            loading: true,
             errors: {},
             user: {
                 first_name: "",
@@ -44,7 +46,10 @@ class UserSettingsAccount extends React.Component {
                     response.data.user,
                 )
 
-                this.setState({user})
+                this.setState({
+                    loading: false,
+                    user,
+                })
 
             })
             .catch(() => {
@@ -104,13 +109,21 @@ class UserSettingsAccount extends React.Component {
 
             <div className="user-settings-account">
 
-                <UserSettingsAccountForm
-                    user={this.state.user}
-                    errors={this.state.errors}
-                    onChange={this.onChange}
-                    onSubmit={this.onSubmit}
-                    disabled={this.state.submitted}
-                />
+                {this.state.loading ?
+
+                    <Loading/>
+
+                    :
+
+                    <UserSettingsAccountForm
+                        user={this.state.user}
+                        errors={this.state.errors}
+                        onChange={this.onChange}
+                        onSubmit={this.onSubmit}
+                        disabled={this.state.submitted}
+                    />
+
+                }
 
             </div>
 

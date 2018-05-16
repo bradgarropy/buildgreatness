@@ -11,6 +11,9 @@ import "./UserActivate.css"
 // material ui
 import RaisedButton from "material-ui/RaisedButton"
 
+// components
+import Loading from "../common/Loading"
+
 
 class UserActivate extends React.Component {
 
@@ -19,7 +22,7 @@ class UserActivate extends React.Component {
         super(props)
 
         this.state = {
-            verified: false,
+            loading: true,
         }
 
     }
@@ -48,14 +51,24 @@ class UserActivate extends React.Component {
 
             <div className="user-activate">
 
-                <p>Your account has been activated, now get started!</p>
+                {this.state.loading ?
 
-                <RaisedButton
-                    className="user-activate-button"
-                    primary
-                    label="login"
-                    containerElement={<Link to="/login"/>}
-                />
+                    <Loading/>
+
+                    :
+
+                    <React.Fragment>
+                        <p>Your account has been activated, now get started!</p>
+
+                        <RaisedButton
+                            className="user-activate-button"
+                            primary
+                            label="login"
+                            containerElement={<Link to="/login"/>}
+                        />
+                    </React.Fragment>
+
+                }
 
             </div>
 
