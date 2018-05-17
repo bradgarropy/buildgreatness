@@ -3,7 +3,7 @@
     "dependencies": {
         "axios": "^0.18.0",
         "jwt-decode": "^2.2.0",
-        "material-ui": "^0.20.0",
+        "material-ui": "^0.20.1",
         "moment": "^2.22.1",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "eslint": "^4.19.1",
-        "eslint-plugin-react": "^7.7.0",
+        "eslint-plugin-react": "^7.8.2",
         "nsp": "^3.2.1"
     },
     "private": true,
